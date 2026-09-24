@@ -65,9 +65,9 @@ window.SITE = {
       sr: "Valentin Kazancev",
     },
     role: {
-      ru: "BI · агенты · автоматизация",
-      en: "BI · agents · automation",
-      sr: "BI · agenti · automatizacija",
+      ru: "Дата-аналитик · BI",
+      en: "Data analyst · BI",
+      sr: "Data analitičar · BI",
     },
     entity: {
       ru: "РФ: самозанятый",
@@ -78,7 +78,7 @@ window.SITE = {
 
   stats: [
     {
-      value: "4y 11m",
+      value: "5y",
       label: { ru: "опыт", en: "experience", sr: "iskustvo" },
     },
     {
@@ -87,7 +87,7 @@ window.SITE = {
     },
     {
       value: "RU EN SR",
-      label: { ru: "языки", en: "languages", sr: "jezici" },
+      label: { ru: "EN C2 · SR B1", en: "EN C2 · SR B1", sr: "EN C2 · SR B1" },
     },
     {
       value: "40 / 10",
@@ -99,7 +99,7 @@ window.SITE = {
     {
       id: "bi",
       title: { ru: "BI", en: "BI", sr: "BI" },
-      chips: ["Python", "pandas", "Excel", "SQL", "PostgreSQL", "Tableau", "ClickHouse"],
+      chips: ["Python", "pandas", "Excel", "SQL", "PostgreSQL", "Tableau", "Power BI", "ClickHouse"],
     },
     {
       id: "bots",
@@ -184,9 +184,9 @@ window.SITE = {
         sr: "SQL + dashboard",
       },
       outcome: {
-        ru: "Запрос не врёт. Tableau Desktop / ClickHouse.",
-        en: "The query does not lie. Tableau Desktop / ClickHouse.",
-        sr: "Upit ne laže. Tableau Desktop / ClickHouse.",
+        ru: "Запрос не врёт. Tableau, Power BI, ClickHouse.",
+        en: "The query does not lie. Tableau, Power BI, ClickHouse.",
+        sr: "Upit ne laže. Tableau, Power BI, ClickHouse.",
       },
     },
     {
@@ -215,9 +215,9 @@ window.SITE = {
         sr: "Analitičar-programer",
       },
       note: {
-        ru: "Сбор ТЗ. Локальные ИИ-агенты: сырьё → pandas → отчёт по расписанию.",
-        en: "Requirements. Local AI agents: raw data → pandas → scheduled reports.",
-        sr: "Prikupljanje TZ. Lokalni AI agenti: sirovi podaci → pandas → izveštaj po rasporedu.",
+        ru: "ТЗ, SQL, дашборды. Агенты и pandas готовят сырьё к отчёту.",
+        en: "Requirements, SQL, dashboards. Agents and pandas prep raw data for the report.",
+        sr: "TZ, SQL, dashboardi. Agenti i pandas spremaju sirove podatke za izveštaj.",
       },
     },
     {
@@ -358,7 +358,7 @@ window.SITE = {
     },
     {
       id: "comics",
-      url: null,
+      url: "https://ai-comic-translator.duckdns.org",
       stack: ["GCP", "vision", "OpenRouter"],
       title: {
         ru: "AI Comic Translator",
