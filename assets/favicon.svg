@@ -1,0 +1,26 @@
+<svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="vkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="vkGradBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="36" height="36" rx="9" fill="#0A0B14"/>
+  <rect width="36" height="36" rx="9" fill="url(#vkGradBg)"/>
+  <rect x="0.5" y="0.5" width="35" height="35" rx="8.5" stroke="url(#vkGrad)" stroke-opacity="0.4"/>
+  <!-- VK Architectural Monogram -->
+  <path d="M9 10.5L16 25.5V10.5" stroke="url(#vkGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 18L25.5 10.5" stroke="url(#vkGrad)" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M16 18L26 25.5" stroke="url(#vkGrad)" stroke-width="2.4" stroke-linecap="round"/>
+  <!-- Data Nodes -->
+  <circle cx="9" cy="10.5" r="2" fill="#00F2FE"/>
+  <circle cx="16" cy="25.5" r="2" fill="#38BDF8"/>
+  <circle cx="16" cy="10.5" r="2" fill="#7C3AED"/>
+  <circle cx="25.5" cy="10.5" r="2" fill="#A855F7"/>
+  <circle cx="26" cy="25.5" r="2" fill="#7C3AED"/>
+  <circle cx="16" cy="18" r="1.5" fill="#FFFFFF"/>
+</svg>
