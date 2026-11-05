@@ -14,7 +14,6 @@ window.SITE = {
     telegram: "https://t.me/valdk_corp",
     github: "https://github.com/ValDagon",
     linkedin: "https://www.linkedin.com/in/valkz/",
-    kwork: "https://kwork.ru/user/valdk",
     emailRu: "mailto:valrus56@yandex.ru",
     emailIntl: "mailto:valdk652@gmail.com",
     emailRuRaw: "valrus56@yandex.ru",
@@ -79,7 +78,7 @@ window.SITE = {
 
   meta: {
     ru: {
-      title: "Валентин Казанцев — Системный аналитик & инженер данных",
+      title: "Валентин Казанцев — Data Engineer",
       description: "5 лет в IT: разработка ТЗ и SRS, проектирование интеграций, оптимизация ClickHouse и PostgreSQL, дашборды Tableau и локальные ИИ-агенты.",
     },
     en: {
@@ -99,9 +98,9 @@ window.SITE = {
       sr: "Otvoren za ponude · Srbija (Kancelarija, Hibrid) · Moskva (Na daljinu)",
     },
     title: {
-      ru: "Системный аналитик",
-      en: "Systems Analyst",
-      sr: "Sistemski analitičar",
+      ru: "Data Engineer",
+      en: "Data Engineer",
+      sr: "Data Engineer",
     },
     about: {
       ru: "5 лет в IT. Разрабатываю ТЗ и спецификации интеграций (REST, Webhook, очереди), оптимизирую SQL в ClickHouse и PostgreSQL на таблицах от 20 млн строк, внедряю дашборды Tableau и автоматизирую обработку логов локальными ИИ-агентами.",
@@ -568,7 +567,6 @@ running (5m00.0s), 3500/3500 VUs, 3,072,000 complete iterations
       { key: "portfolio", label: "Портфолио", value: "valdagon.github.io", href: "https://valdagon.github.io/", copyValue: "https://valdagon.github.io/", icon: "globe" },
       { key: "github", label: "GitHub", value: "github.com/ValDagon", href: "https://github.com/ValDagon", copyValue: "https://github.com/ValDagon", icon: "github" },
       { key: "linkedin", label: "LinkedIn", value: "linkedin.com/in/valkz", href: "https://www.linkedin.com/in/valkz/", copyValue: "https://www.linkedin.com/in/valkz/", icon: "linkedin" },
-      { key: "kwork", label: "Kwork", value: "kwork.ru/user/valdk", href: "https://kwork.ru/user/valdk", copyValue: "https://kwork.ru/user/valdk", icon: "external-link" },
     ],
     en: [
       { key: "telegram", label: "Telegram", value: "@valdk_corp", href: "https://t.me/valdk_corp", copyValue: "@valdk_corp", icon: "send" },
