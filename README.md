@@ -16,11 +16,11 @@ Adapted 1:1 from the cosmic engineering aesthetic of [Take the Space](https://ta
 ## Synchronized Resume Data
 
 Fully aligned with Valentin Kazantsev's CV / Resume PDF:
-- **Title:** Системный аналитик (Systems Analyst)
+- **Title:** Data Engineer
 - **Experience (Aligned with official Resume PDF):**
-  1. *Sensual Studio DOO (Февраль 2025 — Сентябрь 2026):* Ведущий системный аналитик / Аналитик данных (Автоматизация на базе ИИ с экономией 40 ч/нед, ClickHouse/PostgreSQL 4× speedup на 20M+ строк, 12 дашбордов Tableau/Power BI, ТЗ/SRS для 10+ стейкхолдеров).
-  2. *Sensual Studio DOO (Сентябрь 2023 — Февраль 2025):* Инженер-разработчик / Data Pipeline Developer (Высоконагруженный пайплайн 10 000 eps с latency <50 мс, +12% Retention, A/B-тестирование, 50 000+ MAU).
-  3. *Standard Sats (Октябрь 2021 — Сентябрь 2023):* Инженер-разработчик / Flutter-разработчик (Анализ транзакций, мобильные приложения Flutter на 150 000+ MAU с Crash-free 99.9%, Docs-as-Code).
+  1. *Sensual Studio DOO (Февраль 2025 — Сентябрь 2026):* Системный аналитик (Автоматизация на базе ИИ с экономией 40 ч/нед, ClickHouse/PostgreSQL 4× speedup на 20M+ строк, 12 дашбордов Tableau/Power BI, ТЗ/SRS для 10+ стейкхолдеров).
+  2. *Sensual Studio DOO (Сентябрь 2023 — Февраль 2025):* Инженер-разработчик (Высоконагруженный пайплайн 10 000 eps с latency <50 мс, +12% Retention, A/B-тестирование, 50 000+ MAU).
+  3. *Standard Sats (Октябрь 2021 — Сентябрь 2023):* Flutter-разработчик (Анализ транзакций, мобильные приложения Flutter на 150 000+ MAU с Crash-free 99.9%, Docs-as-Code).
 - **Education:** NUST MISIS, Moscow (2018–2022, BSc in Applied Informatics).
 - **All 6 Competency Categories:** Systems Analysis, Databases & ETL, BI & Analytics, AI & Automation, Architecture & Engineering, Languages (RU, EN, SR).
 

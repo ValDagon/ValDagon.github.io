@@ -186,9 +186,9 @@ window.SITE = {
         sr: "Na daljinu (Crna Gora)",
       },
       role: {
-        ru: "Ведущий системный аналитик / Аналитик данных",
-        en: "Lead Systems Analyst / Data Analyst",
-        sr: "Vodeći sistemski analitičar / Analitičar podataka",
+        ru: "Системный аналитик",
+        en: "Systems Analyst",
+        sr: "Sistemski analitičar",
       },
       points: {
         ru: [
@@ -221,9 +221,9 @@ window.SITE = {
         sr: "Na daljinu (Crna Gora)",
       },
       role: {
-        ru: "Инженер-разработчик / Data Pipeline Developer",
-        en: "Software Engineer / Data Pipeline Developer",
-        sr: "Softverski inženjer / Data Pipeline Developer",
+        ru: "Инженер-разработчик",
+        en: "Software Engineer",
+        sr: "Softverski inženjer",
       },
       points: {
         ru: [
@@ -256,9 +256,9 @@ window.SITE = {
         sr: "Na daljinu (Crna Gora)",
       },
       role: {
-        ru: "Инженер-разработчик / Flutter-разработчик",
-        en: "Software Engineer / Flutter Developer",
-        sr: "Softverski inženjer / Flutter programer",
+        ru: "Flutter-разработчик",
+        en: "Flutter Developer",
+        sr: "Flutter programer",
       },
       points: {
         ru: [
