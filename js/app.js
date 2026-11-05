@@ -9,7 +9,7 @@
 
   var LANGS = { ru: true, en: true, sr: true };
   var html = document.documentElement;
-  var state = { lang: pickLang() };
+  var state = { lang: pickLang(), terminalTab: "agents", stackFilter: "all" };
   var currentSection = "";
   var toastTimeout = null;
 
@@ -233,6 +233,62 @@
     if (langLabel) langLabel.textContent = UI("langLabel");
   }
 
+  /* ---------- Terminal Widget ---------- */
+  function renderTerminal() {
+    var tabsWrap = byId("terminal-tabs");
+    var codeNode = byId("terminal-code-content");
+    var metaNode = byId("terminal-meta-text");
+    var copyBtn = byId("terminal-copy-btn");
+    var titleNode = byId("terminal-window-title");
+
+    if (!tabsWrap || !codeNode || !SITE.terminal) return;
+    if (titleNode && SITE.terminal.title) {
+      titleNode.textContent = SITE.terminal.title;
+    }
+
+    tabsWrap.innerHTML = "";
+    var tabs = SITE.terminal.tabs || [];
+    var activeTab = tabs.find(function (tab) { return tab.id === state.terminalTab; }) || tabs[0];
+    if (activeTab) state.terminalTab = activeTab.id;
+
+    tabs.forEach(function (tab) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "terminal-tab mono" + (tab.id === state.terminalTab ? " is-active" : "");
+      btn.setAttribute("role", "tab");
+      btn.setAttribute("aria-selected", String(tab.id === state.terminalTab));
+
+      var iconSpan = document.createElement("span");
+      iconSpan.className = "terminal-tab-icon";
+      iconSpan.innerHTML = getIcon(tab.icon || "file-text");
+
+      var labelSpan = document.createElement("span");
+      labelSpan.textContent = tab.filename || tab.label;
+
+      btn.appendChild(iconSpan);
+      btn.appendChild(labelSpan);
+
+      btn.addEventListener("click", function () {
+        if (state.terminalTab === tab.id) return;
+        state.terminalTab = tab.id;
+        renderTerminal();
+      });
+
+      tabsWrap.appendChild(btn);
+    });
+
+    if (activeTab) {
+      codeNode.textContent = activeTab.code || "";
+      if (metaNode) metaNode.textContent = activeTab.meta || "";
+      if (copyBtn) {
+        copyBtn.onclick = function (e) {
+          e.preventDefault();
+          copyToClipboard(activeTab.code, copyBtn);
+        };
+      }
+    }
+  }
+
   function renderHero() {
     var statusText = byId("hero-status-text");
     if (statusText) statusText.textContent = t(SITE.hero.status);
@@ -243,13 +299,19 @@
     var heroAbout = byId("hero-about-text");
     if (heroAbout) heroAbout.textContent = t(SITE.hero.about);
 
+    renderTerminal();
+
     // Hero Stat Strip
     var stripWrap = byId("hero-stat-strip");
     if (stripWrap && SITE.hero.stats) {
       stripWrap.innerHTML = "";
       SITE.hero.stats.forEach(function (stat) {
         var statItem = document.createElement("div");
-        statItem.className = "stat-card-item";
+        statItem.className = "stat-card-item glass-card";
+
+        var spotlight = document.createElement("div");
+        spotlight.className = "card-spotlight";
+        statItem.appendChild(spotlight);
 
         var iconWrap = document.createElement("div");
         iconWrap.className = "icon-badge icon-badge-cyan";
@@ -291,13 +353,18 @@
     if (!wrap || !SITE.experience) return;
     wrap.innerHTML = "";
 
-    SITE.experience.forEach(function (job) {
+    SITE.experience.forEach(function (job, idx) {
       var item = document.createElement("div");
-      item.className = "timeline-item";
+      item.className = "timeline-item" + (idx === 0 ? " is-active-job" : "");
 
       var node = document.createElement("div");
       node.className = "timeline-node";
       node.setAttribute("aria-hidden", "true");
+      if (idx === 0) {
+        var ping = document.createElement("span");
+        ping.className = "node-ping";
+        node.appendChild(ping);
+      }
       item.appendChild(node);
 
       var card = document.createElement("article");
@@ -355,6 +422,7 @@
         var colonIdx = point.indexOf(":");
         if (colonIdx > 0 && colonIdx < 45) {
           var strong = document.createElement("strong");
+          strong.className = "bullet-prefix";
           strong.textContent = point.slice(0, colonIdx + 1);
           li.appendChild(strong);
           li.appendChild(document.createTextNode(point.slice(colonIdx + 1)));
@@ -377,7 +445,7 @@
 
     SITE.cases.forEach(function (item) {
       var card = document.createElement("article");
-      card.className = "case-card glass-card";
+      card.className = "case-card glass-card" + (item.featured ? " case-featured" : "");
 
       var spotlight = document.createElement("div");
       spotlight.className = "card-spotlight";
@@ -386,15 +454,26 @@
       var topRow = document.createElement("div");
       topRow.className = "case-card-top";
 
+      var badgesLeft = document.createElement("div");
+      badgesLeft.className = "case-badges-left";
+
       var iconBadge = document.createElement("div");
       iconBadge.className = "icon-badge icon-badge-cyan";
       iconBadge.innerHTML = getIcon(item.icon || "cpu");
+      badgesLeft.appendChild(iconBadge);
+
+      if (item.badge) {
+        var typeBadge = document.createElement("span");
+        typeBadge.className = "case-type-badge mono";
+        typeBadge.textContent = t(item.badge);
+        badgesLeft.appendChild(typeBadge);
+      }
 
       var statusPill = document.createElement("span");
       statusPill.className = "status-pill status-" + (item.status || "internal");
       statusPill.textContent = UI(item.status || "internal");
 
-      topRow.appendChild(iconBadge);
+      topRow.appendChild(badgesLeft);
       topRow.appendChild(statusPill);
       card.appendChild(topRow);
 
@@ -411,6 +490,13 @@
         title.textContent = t(item.title);
       }
       card.appendChild(title);
+
+      if (item.flow) {
+        var flowBox = document.createElement("div");
+        flowBox.className = "case-flow-box mono";
+        flowBox.textContent = t(item.flow);
+        card.appendChild(flowBox);
+      }
 
       var summary = document.createElement("p");
       summary.className = "case-summary";
@@ -456,12 +542,52 @@
     });
   }
 
+  function renderStackFilters() {
+    var wrap = byId("stack-filters");
+    if (!wrap) return;
+    wrap.innerHTML = "";
+
+    var filterDefs = [
+      { id: "all", labelKey: "stackFilterAll" },
+      { id: "analysis", labelKey: "stackFilterAnalysis" },
+      { id: "databases", labelKey: "stackFilterDb" },
+      { id: "bi", labelKey: "stackFilterBi" },
+      { id: "ai", labelKey: "stackFilterAi" },
+      { id: "engineering", labelKey: "stackFilterEng" },
+    ];
+
+    filterDefs.forEach(function (f) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "stack-filter-pill" + (f.id === state.stackFilter ? " is-active" : "");
+      btn.setAttribute("role", "tab");
+      btn.setAttribute("aria-selected", String(f.id === state.stackFilter));
+      btn.textContent = UI(f.labelKey) || f.id;
+
+      btn.addEventListener("click", function () {
+        if (state.stackFilter === f.id) return;
+        state.stackFilter = f.id;
+        renderStack();
+      });
+
+      wrap.appendChild(btn);
+    });
+  }
+
   function renderStack() {
+    renderStackFilters();
     var wrap = byId("stack-list");
     if (!wrap || !SITE.stackGroups) return;
     wrap.innerHTML = "";
 
-    SITE.stackGroups.forEach(function (group) {
+    var groups = SITE.stackGroups;
+    if (state.stackFilter && state.stackFilter !== "all") {
+      groups = groups.filter(function (g) {
+        return g.id === state.stackFilter;
+      });
+    }
+
+    groups.forEach(function (group) {
       var card = document.createElement("div");
       card.className = "stack-card glass-card";
 
@@ -704,10 +830,27 @@
     }
   }
 
+  /* ---------- Card Spotlight Tracking ---------- */
+  function setupCardSpotlight() {
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+    document.addEventListener("pointermove", function (e) {
+      var target = e.target && e.target.closest && e.target.closest(".glass-card");
+      if (!target) return;
+      var rect = target.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      target.style.setProperty("--mouse-x", x + "px");
+      target.style.setProperty("--mouse-y", y + "px");
+    }, { passive: true });
+  }
+
   /* ---------- Initialization ---------- */
   generateStarfield();
   persistLang(state.lang);
   render();
   setupEvents();
+  setupCardSpotlight();
   setupScrollSpy();
 })();

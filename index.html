@@ -198,51 +198,102 @@
     </header>
 
     <main id="main">
-      <!-- Centered Full-Viewport Hero (Direct Flow: Availability -> Gradient Headline -> Lead -> CTAs -> Stats) -->
+      <!-- Modern Bento Hero (Left: Pitch + CTAs, Right: Interactive Terminal, Bottom: 4 Key Metric Tiles) -->
       <section class="hero-section" id="top">
-        <div class="hero-container">
-          <!-- Availability Pill -->
-          <div class="hero-status-pill">
-            <span class="status-pulse">
-              <span class="status-dot"></span>
-              <span class="status-ping"></span>
-            </span>
-            <span id="hero-status-text"></span>
-          </div>
-
-          <!-- Headline: Clean, authoritative gradient display -->
-          <h1 class="hero-headline">
-            <span class="hero-gradient-text" id="hero-title-text"></span>
-          </h1>
-
-          <!-- Lead Paragraph -->
-          <p class="hero-lead-text" id="hero-about-text"></p>
-
-          <!-- Dual Hero CTAs -->
-          <div class="hero-cta-buttons">
-            <a
-              class="btn btn-primary btn-lg btn-glow"
-              href="https://t.me/valdk_corp"
-              target="_blank"
-              rel="noopener noreferrer"
-              id="hero-cta-tg"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m22 2-7 20-4-9-9-4Z"></path>
-                <path d="M22 2 11 13"></path>
-              </svg>
-              <span data-i18n="cta">Написать в Telegram</span>
-            </a>
-            <a class="btn btn-secondary btn-lg" href="#cases" data-i18n="ctaAlt">
-              Смотреть кейсы
-            </a>
-          </div>
-
-          <!-- Hero Stat Strip Banner (4 Key Metrics) -->
-          <div class="stat-strip-container">
-            <div class="stat-strip-card" id="hero-stat-strip">
-              <!-- Rendered via JS -->
+        <div class="hero-bento-layout">
+          <!-- Left Column: Core Pitch -->
+          <div class="hero-main-col">
+            <!-- Availability Pill -->
+            <div class="hero-status-pill">
+              <span class="status-pulse">
+                <span class="status-dot"></span>
+                <span class="status-ping"></span>
+              </span>
+              <span id="hero-status-text"></span>
             </div>
+
+            <!-- Headline: Clean, authoritative gradient display -->
+            <h1 class="hero-headline">
+              <span class="hero-name-label">Valentin Kazantsev</span>
+              <span class="hero-gradient-text" id="hero-title-text"></span>
+            </h1>
+
+            <!-- Lead Paragraph -->
+            <p class="hero-lead-text" id="hero-about-text"></p>
+
+            <!-- Dual Hero CTAs -->
+            <div class="hero-cta-buttons">
+              <a
+                class="btn btn-primary btn-lg btn-glow"
+                href="https://t.me/valdk_corp"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="hero-cta-tg"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m22 2-7 20-4-9-9-4Z"></path>
+                  <path d="M22 2 11 13"></path>
+                </svg>
+                <span data-i18n="cta">Написать в Telegram</span>
+              </a>
+              <a class="btn btn-secondary btn-lg" href="#cases" data-i18n="ctaAlt">
+                Смотреть кейсы
+              </a>
+            </div>
+
+            <!-- Hero Quick Badges -->
+            <div class="hero-quick-chips">
+              <span class="chip-item mono"><span class="chip-dot"></span>ClickHouse / PostgreSQL</span>
+              <span class="chip-item mono"><span class="chip-dot"></span>Ollama Local Agents</span>
+              <span class="chip-item mono"><span class="chip-dot"></span>Tableau / Power BI</span>
+              <span class="chip-item mono"><span class="chip-dot"></span>REST / Event 10k eps</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Terminal Widget -->
+          <div class="hero-side-col">
+            <div class="terminal-card glass-card" id="hero-terminal">
+              <div class="card-spotlight"></div>
+              <div class="terminal-header">
+                <div class="terminal-dots" aria-hidden="true">
+                  <span class="terminal-dot dot-red"></span>
+                  <span class="terminal-dot dot-yellow"></span>
+                  <span class="terminal-dot dot-green"></span>
+                </div>
+                <div class="terminal-title mono" id="terminal-window-title">artifacts.sh</div>
+                <div class="terminal-actions">
+                  <span class="terminal-badge mono" data-i18n="terminalBadge">Инженерные артефакты</span>
+                </div>
+              </div>
+
+              <!-- Terminal Tab Controls -->
+              <div class="terminal-tabs" role="tablist" id="terminal-tabs">
+                <!-- Rendered via JS -->
+              </div>
+
+              <!-- Terminal Code Body -->
+              <div class="terminal-body" id="terminal-body" role="tabpanel">
+                <pre class="terminal-pre"><code class="terminal-code mono" id="terminal-code-content"></code></pre>
+              </div>
+
+              <div class="terminal-footer">
+                <span class="terminal-meta mono" id="terminal-meta-text">Python 3.12 · Ollama Local</span>
+                <button type="button" class="terminal-copy-btn" id="terminal-copy-btn" title="Копировать код" aria-label="Копировать код">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                    <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                  </svg>
+                  <span class="mono">Copy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Key Metrics Bento Strip -->
+        <div class="stat-strip-container">
+          <div class="stat-strip-card" id="hero-stat-strip">
+            <!-- Rendered via JS -->
           </div>
         </div>
       </section>
@@ -274,19 +325,24 @@
             <p class="section-subtitle" id="h-cases-sub" data-i18n="casesSubtitle">Продакшен-системы, открытый код, автоматизация</p>
           </div>
 
-          <div class="cases-grid" id="cases-list">
+          <div class="cases-grid bento-cases-grid" id="cases-list">
             <!-- Rendered via JS -->
           </div>
         </div>
       </section>
 
-      <!-- Section: Stack & Skills (All 6 Categories) -->
+      <!-- Section: Stack & Skills (All 6 Categories with Filter) -->
       <section class="section" id="stack" aria-labelledby="h-stack">
         <div class="section-container">
           <div class="section-header">
             <span class="section-eyebrow" data-i18n="navStack">Стек</span>
             <h2 class="section-title" id="h-stack" data-i18n="stackTitle">Технологический стек</h2>
             <p class="section-subtitle" id="stack-subtitle" data-i18n="stackSubtitle">Ключевые компетенции по данным резюме</p>
+          </div>
+
+          <!-- Interactive Stack Filter Pills -->
+          <div class="stack-filters" id="stack-filters" role="tablist" aria-label="Фильтры технологического стека">
+            <!-- Rendered via JS -->
           </div>
 
           <div class="stack-grid" id="stack-list">
