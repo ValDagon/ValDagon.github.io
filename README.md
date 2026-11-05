@@ -17,10 +17,10 @@ Adapted 1:1 from the cosmic engineering aesthetic of [Take the Space](https://ta
 
 Fully aligned with Valentin Kazantsev's CV / Resume PDF:
 - **Title:** Lead Systems Analyst & Data Analyst (Ведущий системный аналитик / аналитик данных)
-- **Experience:**
-  1. *Sensual Studio DOO (2025–2026):* Lead Systems Analyst / Data Analyst (Ollama local AI agents saving 40h/wk, ClickHouse/Postgres 4× speedup on 20M+ rows, 12 Tableau & Power BI live dashboards, SRS for 10+ stakeholders).
-  2. *Sensual Studio DOO (2023–2025):* Software Engineer / Data Pipeline Developer (10k eps telemetry pipeline with <50ms latency, +12% Retention, A/B test statistics, 50k+ MAU).
-  3. *Standard Sats (2021–2023):* Software Engineer / Systems Engineer (10k+ transaction audits, Flutter 150k+ MAU with 99.9% crash-free, Docs-as-Code).
+- **Experience (5 Years Pure Commercial Stack, 2021–2026):**
+  1. *Essential Studio (2024–н.в.):* Data Analyst / Lead Systems Analyst (Promotion: Engineer ➔ Data Analyst. Ollama local AI agents saving 40h/wk, ClickHouse/Postgres 4× speedup on 20M+ rows, 12 Tableau & Power BI live dashboards, SRS for 10+ stakeholders, 10k eps telemetry pipeline).
+  2. *Fintech Platform & Investment Analytics (2023–2024):* Invest / Data Analyst (Belgrade. 10k+ daily transactions audit, A/B test statistics for 50k+ MAU, OpenAPI/Swagger financial integration specs).
+  3. *Mobile & Tech Solutions (2021–2023):* Mobile / Flutter Developer (Montenegro. Flutter 150k+ MAU with 99.9% crash-free, REST/WebSocket client-server architecture, Docs-as-Code).
 - **Education:** NUST MISIS, Moscow (2018–2022, BSc in Applied Informatics).
 - **All 6 Competency Categories:** Systems Analysis, Databases & ETL, BI & Analytics, AI & Automation, Architecture & Engineering, Languages (RU, EN, SR).
 

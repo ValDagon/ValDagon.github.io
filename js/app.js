@@ -399,6 +399,14 @@
       metaRow.appendChild(dot);
       metaRow.appendChild(placeSpan);
 
+      if (job.badge) {
+        var promoBadge = document.createElement("span");
+        promoBadge.className = "timeline-promo-badge mono";
+        promoBadge.textContent = t(job.badge);
+        metaRow.appendChild(document.createTextNode(" • "));
+        metaRow.appendChild(promoBadge);
+      }
+
       roleWrap.appendChild(roleTitle);
       roleWrap.appendChild(metaRow);
 

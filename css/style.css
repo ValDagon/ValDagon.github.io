@@ -1085,6 +1085,18 @@ img, svg {
   font-weight: 600;
 }
 
+.timeline-promo-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: oklch(74% 0.17 160 / 0.12);
+  border: 1px solid oklch(74% 0.17 160 / 0.3);
+  padding: 0.12rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
 .timeline-date-badge {
   display: inline-flex;
   align-items: center;
