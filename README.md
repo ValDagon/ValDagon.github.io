@@ -7,9 +7,9 @@ Personal multilingual portfolio and business card (RU / EN / SR-Latn) for GitHub
 ## Design System
 
 Adapted 1:1 from the cosmic engineering aesthetic of [Take the Space](https://takethe.space/):
-- **Color Space:** OKLCH cosmic dark void background (`oklch(8% 0.02 265)`), card surfaces (`oklch(12% 0.03 265)`), Electric Cyan (`oklch(70% 0.2 250)`), Ultraviolet (`oklch(65% 0.22 280)`).
+- **Color Space:** OKLCH technical obsidian void (`oklch(8% 0.02 265)`), card surfaces (`oklch(12% 0.03 265)`), Electric Cyan (`oklch(72% 0.2 250)`), Precision Emerald (`oklch(74% 0.17 160)`).
 - **Typography:** Space Grotesk (display/headings), Inter (body), JetBrains Mono (monospace metrics & code).
-- **Atmosphere:** Multi-layered twinkling starfield with randomized coordinates, animated pulsing radial glow blobs, and continuous cyan-to-violet gradient keyframes.
+- **Atmosphere:** Architectural 24px dot-matrix obsidian surface, interactive macOS terminal, and Bento grid hierarchy.
 - **Micro-Interactions:** Glassmorphic card hover spotlights, tactile active feedback (`transform: scale(0.97)`), 1-click contact copying with toast notifications.
 - **Accessibility:** Semantic HTML, skip link, `:focus-visible` rings, `@media (prefers-reduced-motion: reduce)` support.
 

@@ -599,7 +599,7 @@
       head.className = "stack-card-head";
 
       var iconBadge = document.createElement("div");
-      iconBadge.className = "icon-badge icon-badge-violet";
+      iconBadge.className = "icon-badge icon-badge-emerald";
       iconBadge.innerHTML = getIcon(group.icon || "file-text");
 
       var title = document.createElement("h3");
@@ -646,7 +646,7 @@
     left.className = "education-card-left";
 
     var iconBadge = document.createElement("div");
-    iconBadge.className = "icon-badge icon-badge-violet";
+    iconBadge.className = "icon-badge icon-badge-emerald";
     iconBadge.innerHTML = getIcon("award");
 
     var info = document.createElement("div");
